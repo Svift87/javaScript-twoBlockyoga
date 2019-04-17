@@ -98,4 +98,29 @@ window.addEventListener('DOMContentLoaded', function () {
     };
 
     setClock('timer', deadLine);
+
+    // modal
+
+    let more = document.querySelector('.more'),
+        overlay = document.querySelector('.overlay'),
+        popupClose = document.querySelector('.popup-close'),
+        descriptionBtn = document.querySelector('.description-btn');
+
+    descriptionBtn.addEventListener('click', function () {
+        overlay.style.display = 'block';
+        this.classList.add('more-splash');
+        document.body.style.overflow = 'hidden';
+    });
+
+    more.addEventListener('click', function () {
+        overlay.style.display = 'block';
+        this.classList.add('more-splash');
+        document.body.style.overflow = 'hidden';
+    });
+
+    popupClose.addEventListener('click', function () {
+        overlay.style.display = 'none';
+        more.classList.remove('more-splash');
+        document.body.style.overflow = '';
+    });
 })
